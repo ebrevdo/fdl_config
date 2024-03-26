@@ -33,3 +33,27 @@ Import Fiddle:
 ```python
 import fiddle as fdl
 ```
+
+### Eugene's modifications
+
+Build the `fdl_config` wheel:
+
+```shell
+WHEEL_PATH=$(./build_renamed.sh | tail -1)
+# Install with the [flags] extension, which adds etils and absl-py.
+pip install "${WHEEL_PATH}"'[flags]'
+```
+
+Import Fiddle:
+
+```python
+import fdl_config as fdl
+```
+
+Update repo from upstream:
+
+```shell
+update_from_google.sh
+git push
+```
+
